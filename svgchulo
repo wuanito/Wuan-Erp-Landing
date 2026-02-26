@@ -1,0 +1,160 @@
+export default function HeroHome() {
+  return (
+    <section className="relative overflow-hidden px-8 pb-32 pt-20">
+      {/* Hero glow */}
+      <div
+        className="pointer-events-none absolute right-[5%] top-[10%] -z-10 h-[40vw] w-[40vw] rounded-full"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(255, 107, 26, 0.15) 0%, rgba(10, 10, 15, 0) 70%)",
+        }}
+        aria-hidden="true"
+      />
+
+      <div className="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-2">
+        {/* Left: text content */}
+        <div data-aos="fade-right">
+          <span className="mb-6 inline-block rounded-full bg-orange-500/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-orange-500">
+            Open Source · Microservicios
+          </span>
+          <h1 className="mb-6 text-6xl font-extrabold leading-tight md:text-7xl">
+            ERP enterprise. <br />
+            <span className="text-gradient">Hecho para devs.</span>
+          </h1>
+          <p className="mb-10 max-w-lg text-lg leading-relaxed text-gray-400">
+            Plataforma ERP con arquitectura de microservicios real. API Gateway
+            reactivo, observabilidad nativa con OpenTelemetry y módulos
+            independientes desplegables con Docker.
+          </p>
+          <div className="flex flex-wrap gap-4">
+            <a
+              href="#modulos"
+              className="rounded-xl bg-[#FF6B1A] px-8 py-4 font-bold text-white transition duration-300 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-[0_10px_20px_rgba(255,107,26,0.3)]"
+            >
+              Explorar módulos
+            </a>
+            <a
+              href="https://github.com/ErpOpenSource"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-xl bg-white/5 px-8 py-4 font-bold transition hover:bg-white/10"
+            >
+              Ver en GitHub →
+            </a>
+          </div>
+        </div>
+
+        {/* Right: microservices architecture diagram */}
+        <div
+          className="relative flex items-center justify-center"
+          data-aos="fade-left"
+        >
+          <div className="absolute h-64 w-64 rounded-full bg-orange-500/20 blur-[100px]" />
+          <svg viewBox="0 0 400 400" className="relative w-full max-w-[450px]">
+            <defs>
+              <radialGradient id="gatewayGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stopColor="#FF6B1A" stopOpacity="0.25" />
+                <stop offset="100%" stopColor="#FF6B1A" stopOpacity="0" />
+              </radialGradient>
+            </defs>
+
+            {/* Orbit ring — rotates slowly */}
+            <circle
+              cx="200" cy="200" r="125"
+              fill="none" stroke="#FF6B1A"
+              strokeWidth="0.5" strokeDasharray="8 16" opacity="0.25"
+            >
+              <animateTransform
+                attributeName="transform" type="rotate"
+                from="0 200 200" to="360 200 200"
+                dur="40s" repeatCount="indefinite"
+              />
+            </circle>
+
+            {/* Inner ring */}
+            <circle cx="200" cy="200" r="70" fill="none" stroke="#FF6B1A" strokeWidth="0.5" opacity="0.1" />
+
+            {/* ── Connection lines — active services ── */}
+            <line x1="200" y1="200" x2="200" y2="75"  stroke="#FF6B1A" strokeWidth="1" opacity="0.35" />
+            <line x1="200" y1="200" x2="308" y2="138" stroke="#FF6B1A" strokeWidth="1" opacity="0.35" />
+            <line x1="200" y1="200" x2="308" y2="263" stroke="#FF6B1A" strokeWidth="1" opacity="0.35" />
+
+            {/* Connection lines — coming soon */}
+            <line x1="200" y1="200" x2="200" y2="325" stroke="#444" strokeWidth="1" opacity="0.4" strokeDasharray="4 4" />
+            <line x1="200" y1="200" x2="92"  y2="263" stroke="#444" strokeWidth="1" opacity="0.4" strokeDasharray="4 4" />
+            <line x1="200" y1="200" x2="92"  y2="138" stroke="#444" strokeWidth="1" opacity="0.4" strokeDasharray="4 4" />
+
+            {/* ── Animated pulse dots on active lines ── */}
+            <circle r="3" fill="#FF6B1A">
+              <animateMotion dur="2s" repeatCount="indefinite" path="M200,200 L200,75" />
+              <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" />
+            </circle>
+            <circle r="3" fill="#FF6B1A">
+              <animateMotion dur="2.4s" repeatCount="indefinite" begin="0.8s" path="M200,200 L308,138" />
+              <animate attributeName="opacity" values="0;1;0" dur="2.4s" repeatCount="indefinite" begin="0.8s" />
+            </circle>
+            <circle r="3" fill="#FF6B1A">
+              <animateMotion dur="2.8s" repeatCount="indefinite" begin="1.6s" path="M200,200 L308,263" />
+              <animate attributeName="opacity" values="0;1;0" dur="2.8s" repeatCount="indefinite" begin="1.6s" />
+            </circle>
+
+            {/* ── Active service nodes ── */}
+
+            {/* Auth — 12 o'clock */}
+            <circle cx="200" cy="75" r="36" fill="#0D0D16" stroke="#FF6B1A" strokeWidth="1.5" />
+            <text x="200" y="70" textAnchor="middle" fill="#FF6B1A" fontSize="9" fontFamily="monospace" fontWeight="bold">AUTH</text>
+            <text x="200" y="83" textAnchor="middle" fill="#666" fontSize="8" fontFamily="monospace">:8081</text>
+
+            {/* Sales — 2 o'clock */}
+            <circle cx="308" cy="138" r="36" fill="#0D0D16" stroke="#FF6B1A" strokeWidth="1.5" />
+            <text x="308" y="133" textAnchor="middle" fill="#FF6B1A" fontSize="9" fontFamily="monospace" fontWeight="bold">SALES</text>
+            <text x="308" y="146" textAnchor="middle" fill="#666" fontSize="8" fontFamily="monospace">:8082</text>
+
+            {/* Observability — 4 o'clock */}
+            <circle cx="308" cy="263" r="36" fill="#0D0D16" stroke="#FF6B1A" strokeWidth="1.5" />
+            <text x="308" y="256" textAnchor="middle" fill="#FF6B1A" fontSize="8" fontFamily="monospace" fontWeight="bold">OTel</text>
+            <text x="308" y="267" textAnchor="middle" fill="#FF6B1A" fontSize="8" fontFamily="monospace" fontWeight="bold">Grafana</text>
+            <text x="308" y="278" textAnchor="middle" fill="#666" fontSize="7" fontFamily="monospace">:3000</text>
+
+            {/* ── Coming soon nodes (dashed + dimmed) ── */}
+
+            {/* HR — 6 o'clock */}
+            <g opacity="0.35">
+              <circle cx="200" cy="325" r="32" fill="#0D0D16" stroke="#555" strokeWidth="1" strokeDasharray="5 3" />
+              <text x="200" y="321" textAnchor="middle" fill="#666" fontSize="9" fontFamily="monospace" fontWeight="bold">HR</text>
+              <text x="200" y="333" textAnchor="middle" fill="#555" fontSize="7" fontFamily="monospace">soon</text>
+            </g>
+
+            {/* Inventory — 8 o'clock */}
+            <g opacity="0.35">
+              <circle cx="92" cy="263" r="32" fill="#0D0D16" stroke="#555" strokeWidth="1" strokeDasharray="5 3" />
+              <text x="92" y="259" textAnchor="middle" fill="#666" fontSize="7.5" fontFamily="monospace" fontWeight="bold">INVENT.</text>
+              <text x="92" y="271" textAnchor="middle" fill="#555" fontSize="7" fontFamily="monospace">soon</text>
+            </g>
+
+            {/* Accounting — 10 o'clock */}
+            <g opacity="0.35">
+              <circle cx="92" cy="138" r="32" fill="#0D0D16" stroke="#555" strokeWidth="1" strokeDasharray="5 3" />
+              <text x="92" y="133" textAnchor="middle" fill="#666" fontSize="7.5" fontFamily="monospace" fontWeight="bold">ACCT.</text>
+              <text x="92" y="145" textAnchor="middle" fill="#555" fontSize="7" fontFamily="monospace">soon</text>
+            </g>
+
+            {/* ── Central API Gateway ── */}
+            <circle cx="200" cy="200" r="58" fill="url(#gatewayGlow)" />
+            <circle cx="200" cy="200" r="52" fill="#0D0D16" stroke="#FF6B1A" strokeWidth="2">
+              <animate attributeName="stroke-opacity" values="1;0.5;1" dur="3s" repeatCount="indefinite" />
+            </circle>
+            {/* Outer pulse ring */}
+            <circle cx="200" cy="200" r="52" fill="none" stroke="#FF6B1A" strokeWidth="1.5">
+              <animate attributeName="r"       values="52;66;52" dur="3s" repeatCount="indefinite" />
+              <animate attributeName="opacity" values="0.3;0;0.3" dur="3s" repeatCount="indefinite" />
+            </circle>
+            <text x="200" y="193" textAnchor="middle" fill="white" fontSize="9" fontFamily="monospace" fontWeight="bold">API</text>
+            <text x="200" y="206" textAnchor="middle" fill="white" fontSize="9" fontFamily="monospace" fontWeight="bold">GATEWAY</text>
+            <text x="200" y="220" textAnchor="middle" fill="#FF6B1A" fontSize="8" fontFamily="monospace">:8080</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+  );
+}
