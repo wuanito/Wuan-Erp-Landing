@@ -109,82 +109,9 @@ export default function ContactoPage() {
 
       {/* Main grid */}
       <section className="px-8 pb-24">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2">
-          {/* Form */}
-          <div
-            className="rounded-3xl border border-white/5 bg-[#161625] p-10"
-            data-aos="fade-right"
-          >
-            <h2 className="mb-8 text-2xl font-bold">Envíanos un mensaje</h2>
-            <form className="space-y-6">
-              <div className="grid gap-6 sm:grid-cols-2">
-                <div>
-                  <label className="mb-2 block text-sm font-medium text-gray-300">
-                    Nombre
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Tu nombre"
-                    className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-gray-600 outline-none transition focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
-                  />
-                </div>
-                <div>
-                  <label className="mb-2 block text-sm font-medium text-gray-300">
-                    Correo electrónico
-                  </label>
-                  <input
-                    type="email"
-                    placeholder="tu@email.com"
-                    className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-gray-600 outline-none transition focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="mb-2 block text-sm font-medium text-gray-300">
-                  Asunto
-                </label>
-                <select className="w-full rounded-xl border border-white/10 bg-[#161625] px-4 py-3 text-sm text-white outline-none transition focus:border-orange-500 focus:ring-1 focus:ring-orange-500">
-                  <option value="" className="bg-[#161625]">
-                    Selecciona un motivo
-                  </option>
-                  <option value="soporte" className="bg-[#161625]">
-                    Soporte técnico
-                  </option>
-                  <option value="colaboracion" className="bg-[#161625]">
-                    Colaboración
-                  </option>
-                  <option value="empresa" className="bg-[#161625]">
-                    Propuesta empresarial
-                  </option>
-                  <option value="otro" className="bg-[#161625]">
-                    Otro
-                  </option>
-                </select>
-              </div>
-
-              <div>
-                <label className="mb-2 block text-sm font-medium text-gray-300">
-                  Mensaje
-                </label>
-                <textarea
-                  rows={5}
-                  placeholder="Cuéntanos más sobre tu consulta..."
-                  className="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-gray-600 outline-none transition focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full rounded-xl bg-orange-600 py-4 font-bold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-orange-500 hover:shadow-[0_10px_30px_rgba(255,107,26,0.3)]"
-              >
-                Enviar mensaje
-              </button>
-            </form>
-          </div>
-
+        <div className="mx-auto max-w-3xl">
           {/* Info */}
-          <div className="flex flex-col gap-8" data-aos="fade-left">
+          <div className="flex flex-col gap-8" data-aos="fade-up">
             {/* Contact cards */}
             <div className="space-y-4">
               {contactInfo.map((item) => (
