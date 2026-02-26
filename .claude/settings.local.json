@@ -1,7 +1,14 @@
 {
   "permissions": {
     "allow": [
-      "Bash(gh repo list ErpOpenSource --limit 20 --json name,description)"
+      "Bash(gh repo list ErpOpenSource --limit 20 --json name,description)",
+      "Bash(where pnpm)",
+      "Bash(node --version)",
+      "Bash(npm --version)",
+      "Bash(npm install -g pnpm@10.15.1)",
+      "Bash(pnpm install)",
+      "Bash(git add pnpm-lock.yaml)",
+      "Bash(git commit -m \"fix: update pnpm-lock.yaml to match package.json:*)"
     ]
   }
 }
