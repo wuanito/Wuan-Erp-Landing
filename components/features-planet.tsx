@@ -21,7 +21,7 @@ const features = [
     iconColor: "text-blue-400",
     title: "Observabilidad Nativa",
     description:
-      "OpenTelemetry Collector, Grafana Tempo, Prometheus y Grafana listos desde el primer día. Métricas, trazas distribuidas y logs correlacionados en un solo docker compose up.",
+      "OpenTelemetry Collector, Grafana Tempo, Prometheus y Grafana listos desde eUna plataformal primer día. Métricas, trazas distribuidas y logs correlacionados en un solo docker compose up.",
     icon: (
       <path
         strokeLinecap="round"
